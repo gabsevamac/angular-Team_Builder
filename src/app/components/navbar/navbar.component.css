@@ -1,0 +1,40 @@
+.navbar__container{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    background-color: var(--pokecolor-red);
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: var(--navbar-font);
+    font-weight: 300;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40vw;
+}
+.navigation a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+.logo p{
+    font-size: 2.8rem;
+    margin-left: .7rem;
+}
+.user{
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    align-items: center;
+}
+.user p{
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
