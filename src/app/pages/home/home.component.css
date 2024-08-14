@@ -1,0 +1,8 @@
+.pokedex__container{
+    margin: 8.08vh 4.7vw;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    gap: 30px 0px;
+    /* justify-content: space-around; */
+}
+

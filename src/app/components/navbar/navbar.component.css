@@ -11,14 +11,18 @@
     color: white;
     font-family: var(--navbar-font);
     font-weight: 300;
+    margin-right: 2.98vw;
 }
 .navigation{
     display: flex;
     align-items: center;
-    justify-content: space-around;
     width: 40vw;
 }
-.navigation a {
+.links{
+    display: flex;
+    justify-content: space-around;
+}
+.links a {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pokecard',
+  selector: 'pokecard',
   standalone: true,
   imports: [],
   templateUrl: './pokecard.component.html',
