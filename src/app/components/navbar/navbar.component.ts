@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'navbar',
@@ -9,4 +9,20 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  @Input()
+  public hasSearch: boolean;
+
+
+  
+  constructor(){
+    this.hasSearch = false;
+  }
+
+  test(event:Event){
+    event?.preventDefault()
+    alert("Clicked!")
+  }
+  seach(){
+    alert("Searching function")
+  }
 }

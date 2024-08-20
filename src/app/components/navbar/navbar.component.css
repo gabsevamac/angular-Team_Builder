@@ -11,7 +11,7 @@
     color: white;
     font-family: var(--navbar-font);
     font-weight: 300;
-    margin-right: 2.98vw;
+    margin:0 2.98vw ;
 }
 .navigation{
     display: flex;
@@ -41,4 +41,56 @@
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
+}
+
+.searchbar__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.searchbar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 8.5vh;
+    background-color: var(--pokecolor-black);
+    align-items: center;
+}
+.searchbar input{
+    width: 23.2vw;
+    height: 4.41vh;
+    border-radius:0.625rem;
+    padding-left: 21px;
+    font-size: 1.5rem;
+    outline: none;
+    color: var(--pokecolor-black);
+}
+.searchbar button{
+    width: 2.18vw;
+    height: 4.42vh;
+    border-radius:0.625rem;
+    background-color: var(--pokecolor-red);
+    border: none;
+    margin-left: .58vw;
+    cursor: pointer;
+}
+.filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="734" height="41" viewBox="0 0 734 41" fill="none" ><path d="M0 0H734L710 41H24L0 0Z" fill="%232F2F2F" /></svg>');
+    width: 39.06vw;
+    height: 4.42vh;
+}
+.filter a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 1.375rem;
+    margin-right: .32rem;
+}
+.filter svg{
+    cursor: pointer;
 }

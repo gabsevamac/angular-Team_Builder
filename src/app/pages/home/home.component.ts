@@ -12,4 +12,5 @@ import { PokecardComponent } from '../../components/pokecard/pokecard.component'
 })
 export class HomeComponent {
   
+
 }
