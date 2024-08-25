@@ -1,0 +1,25 @@
+.popup__container{
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-image:url("../../assets/Pokedex Pop Up.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content__container{
+    display:flex;
+    background-color: rgba(0, 0, 255, 0.219);
+    width: 50.71vw;
+    height: 61vh;
+    margin-bottom: 5.92vh;
+    margin-right: 3.19vw;
+}
+.info{
+    display: flex;
+}

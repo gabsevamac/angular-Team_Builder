@@ -1,5 +1,5 @@
 .navbar__container{
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     display: flex;
     background-color: var(--pokecolor-red);
@@ -90,7 +90,10 @@
     font-weight: 300;
     font-size: 1.375rem;
     margin-right: .32rem;
+    padding-bottom: 1.61vh;
 }
 .filter svg{
     cursor: pointer;
+    padding-bottom: 1.61vh;
+
 }

@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'pokecard',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './pokecard.component.html',
   styleUrl: './pokecard.component.css'
 })
 export class PokecardComponent {
-
+  @Input()
+  public isEmpty;
+ 
+  constructor(){
+   this.isEmpty = false;
+  }
+ 
 }

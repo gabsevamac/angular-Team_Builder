@@ -1,62 +1,70 @@
 /** conic-gradient(color1 start end, color2 start end, color1 endColor2 360deg) */
-.pokecard__container{
-    display: flex;
-    width: 13.68vw;
-    height: 25.86vh;
-    border-radius: 1.875rem;
-    flex-direction: column;
-    background: conic-gradient(
-        var(--pokecolor-red) 0deg 90deg,
-        var(--pokecolor-black) 90deg 270deg,
-        var(--pokecolor-red) 270deg 360deg
-    ) ; 
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+.pokecard__container {
+  display: flex;
+  width: 13.68vw;
+  height: 25.86vh;
+  border-radius: 1.875rem;
+  flex-direction: column;
+  background: conic-gradient(
+    var(--pokecolor-red) 0deg 90deg,
+    var(--pokecolor-black) 90deg 270deg,
+    var(--pokecolor-red) 270deg 360deg
+  );
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.details{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.details p{
-    text-align: center;
-    color: white;
+.details p {
+  text-align: center;
+  color: white;
 }
-.pokenumber{
-    width: 100%;
-    height: 1.8vh;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    margin-bottom: 1.3rem;
-    margin-top: .3rem;
+.pokenumber {
+  width: 100%;
+  height: 1.8vh;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin-bottom: 1.3rem;
+  margin-top: 0.3rem;
 }
-.pokeimg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.pokeimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.pokeimg .circle{
-    position: absolute;
+.pokeimg .circle {
+  position: absolute;
 }
-.pokemonIcon{
-    position: relative;
+.pokemonIcon {
+  position: relative;
 }
-.pokename{
-    margin: 6% 0 0 0;
-    font-size: 1.5rem;
-    font-weight: 600;
+.pokename {
+  margin: 6% 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
-.types{
-    display: flex;
-    justify-content: space-evenly;
-    font-weight: 500;
-    color: white;
-    margin: 0 1.8rem;
+.types {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 500;
+  color: white;
+  margin: 0 1.8rem;
 }
-.types p{
-    border-radius: 8px;
-    font-size: .875rem;
-    width: 4vw;
-    height: 2.15vh;
-    text-align: center;
-    align-content: center;
+.types p {
+  border-radius: 8px;
+  font-size: 0.875rem;
+  width: 4vw;
+  height: 2.15vh;
+  text-align: center;
+  align-content: center;
+}
+
+.disabled {
+  background: conic-gradient(
+    #cecece 0deg 90deg,
+    var(--pokecolor-black) 90deg 270deg,
+    #cecece 270deg 360deg
+  );
 }

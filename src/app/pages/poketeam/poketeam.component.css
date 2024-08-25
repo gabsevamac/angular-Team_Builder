@@ -1,0 +1,37 @@
+.teamSelected {
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: 800;
+  margin-top: 2vh;
+  position: sticky;
+}
+.title h3 {
+  margin-left: 0.5vw;
+}
+.pokelist {
+  margin: 2vh 4.4vw;
+  display: grid;
+  grid-template-columns: 15.5vw 15.5vw 15.5vw 15.5vw 15.5vw 15.5vw;
+  gap: 30px 0px;
+}
+.search {
+  display: flex;
+}
+#upside{
+  background-color: #ffff;
+  z-index: 100000;
+}
+.upside{
+    position: sticky;
+}
+
+.fixed{
+    position: sticky;
+    top: 0;
+    left: 0;
+}

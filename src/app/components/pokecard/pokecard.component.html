@@ -1,6 +1,6 @@
-<div class="pokecard__container">
+<div class="pokecard__container" [ngClass]="{'disabled': isEmpty}">
   <div class="details">
-    <p class="pokenumber">N°0001</p>
+    <p class="pokenumber">{{!isEmpty ?"N°0001":"N°0000"}}</p>
     <div class="pokeimg">
       <svg
       class="circle"
@@ -36,10 +36,14 @@
         />
       </svg>
     </div>
-    <p class="pokename">Fulano</p>
+    <p class="pokename">{{isEmpty? "Vazio":"Fulano"}}</p>
   </div>
   <div class="types">
-    <p style="background-color: #7F00FF;">POISON</p>
-    <p style="background-color: #7BC700;">GRASS</p>
+    @if(!isEmpty){
+      <p style="background-color: #7F00FF;">POISON</p>
+      <p style="background-color: #7BC700;">GRASS</p>
+    }@else {
+      <p style="background-color: #969696;">NORMAL</p>
+    }
   </div>
 </div>
