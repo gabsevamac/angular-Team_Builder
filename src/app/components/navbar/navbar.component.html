@@ -59,7 +59,17 @@
 <!--TODO: check the active link to put this-->
 <div class="searchbar__container">
   <div class="searchbar">
-    <input type="text" placeholder="Nome ou Número do Pokemon" />
+    @if(isGameSeach){
+      <select name="" id="">
+        <option value="fire red">Pokemon Fire Red</option>
+        <option value="fire red">Pokemon Fire Red</option>
+        <option value="fire red">Pokemon Fire Red</option>
+        <option value="fire red">Pokemon Fire Red</option>
+        <option value="fire red">Pokemon Fire Red</option>
+      </select>
+    }@else {
+      <input type="text" placeholder="Nome ou Número do Pokemon" />
+    }
     <button (click)="seach()">
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { PokecardComponent } from '../../components/pokecard/pokecard.component';
+import { ActivatedRoute } from '@angular/router';
+import { NavbarStateService } from '../../services/navbar-state.service';
 
 @Component({
   selector: 'app-poketeam',
@@ -10,7 +12,12 @@ import { PokecardComponent } from '../../components/pokecard/pokecard.component'
 })
 export class PoketeamComponent {
 
+  constructor(private navbarState: NavbarStateService){
+
+  }
   ngOnInit(){
+    this.navbarState.setState(true)
+    console.log(this.navbarState.getState())
     window.addEventListener('scroll', async function(event){
       const domElement = this.document.querySelector("#upside") 
       const visible = new Promise(resolve => { //https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API

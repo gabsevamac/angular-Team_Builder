@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavbarStateService } from '../../services/navbar-state.service';
 
 @Component({
   selector: 'navbar',
@@ -7,16 +9,22 @@ import { Component, Input } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnChanges{
 
   @Input()
-  public hasSearch: boolean;
+  public isGameSeach: boolean = this.state.getState();
 
-
-  
-  constructor(){
-    this.hasSearch = false;
+  constructor(private state: NavbarStateService){
+    
   }
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes)
+  }
+
+  ngOnInit(){
+    
+  }
+
 
   test(event:Event){
     event?.preventDefault()
