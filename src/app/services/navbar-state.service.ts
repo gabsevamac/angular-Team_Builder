@@ -7,17 +7,17 @@ import { Injectable } from '@angular/core';
 
 
 export class NavbarStateService {
-  private state: boolean = false;
+  protected state: boolean = false;
 
-  getState(){
+  getState() :boolean{
     return this.state;
   }
 
-  setState(state: boolean){
+  setState(state: boolean): void{
     this.state = state
   }
   
-  changeState(){
+  changeState(): void{
     this.state = !this.state
   }
 

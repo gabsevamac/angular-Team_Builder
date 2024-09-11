@@ -1,99 +1,123 @@
-.navbar__container{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    background-color: var(--pokecolor-red);
-    justify-content: space-between;
+.navbar__container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  background-color: var(--pokecolor-red);
+  justify-content: space-between;
 }
-.logo{
-    display: flex;
-    align-items: center;
-    color: white;
-    font-family: var(--navbar-font);
-    font-weight: 300;
-    margin:0 2.98vw ;
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: var(--navbar-font);
+  font-weight: 300;
+  margin: 0 2.98vw;
 }
-.navigation{
-    display: flex;
-    align-items: center;
-    width: 40vw;
+.navigation {
+  display: flex;
+  align-items: center;
+  width: 40vw;
 }
-.links{
-    display: flex;
-    justify-content: space-around;
+.links {
+  display: flex;
+  justify-content: space-around;
 }
 .links a {
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
 }
-.logo p{
-    font-size: 2.8rem;
-    margin-left: .7rem;
+.logo p {
+  font-size: 2.8rem;
+  margin-left: 0.7rem;
 }
-.user{
-    display: flex;
-    justify-content: space-around;
-    width: 20vw;
-    align-items: center;
+.user {
+  display: flex;
+  justify-content: space-around;
+  width: 20vw;
+  align-items: center;
 }
-.user p{
-    font-size: 1.5rem;
-    color: white;
-    text-decoration: none;
+.user p {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
 }
 
-.searchbar__container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+.searchbar__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-.searchbar{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    height: 8.5vh;
-    background-color: var(--pokecolor-black);
-    align-items: center;
+.searchbar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 8.5vh;
+  background-color: var(--pokecolor-black);
+  align-items: center;
 }
-.searchbar input{
-    width: 23.2vw;
+.searchbar input {
+  width: 23.2vw;
+  height: 4.41vh;
+  border-radius: 0.625rem;
+  padding-left: 21px;
+  font-size: 1.5rem;
+  outline: none;
+  color: var(--pokecolor-black);
+}
+.searchbar button {
+  width: 2.18vw;
+  height: 4.42vh;
+  border-radius: 0.625rem;
+  background-color: var(--pokecolor-red);
+  border: none;
+  margin-left: 0.58vw;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="734" height="41" viewBox="0 0 734 41" fill="none" ><path d="M0 0H734L710 41H24L0 0Z" fill="%232F2F2F" /></svg>');
+  width: 39.06vw;
+  height: 4.42vh;
+}
+.filter a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  font-size: 1.375rem;
+  margin-right: 0.32rem;
+  padding-bottom: 1.61vh;
+}
+.filter svg {
+  cursor: pointer;
+  padding-bottom: 1.61vh;
+}
+.gameDropdown {
+    width: 20.14vw;
     height: 4.41vh;
-    border-radius:0.625rem;
-    padding-left: 21px;
-    font-size: 1.5rem;
+    appearance: none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
     outline: none;
-    color: var(--pokecolor-black);
+    border-radius: 10px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M10.6178 10.675L13.6557 7.6L15.0635 9L10.6178 13.5L6.17213 9L7.57993 7.6L10.6178 10.675ZM10.6178 0C9.25117 0 7.96686 0.262667 6.76489 0.788C5.56291 1.31333 4.51735 2.02567 3.62821 2.925C2.73908 3.82433 2.03535 4.88267 1.51701 6.1C0.998681 7.31733 0.739185 8.61733 0.738527 10C0.737868 11.3827 0.997364 12.6827 1.51701 13.9C2.03666 15.1173 2.7404 16.1757 3.62821 17.075C4.51603 17.9743 5.56159 18.6867 6.76489 19.212C7.96818 19.7373 9.25249 20 10.6178 20C11.9831 20 13.2674 19.7373 14.4707 19.212C15.674 18.6867 16.7196 17.9743 17.6074 17.075C18.4952 16.1757 19.1993 15.1173 19.7196 13.9C20.2399 12.6827 20.4991 11.3827 20.4971 10C20.4951 8.61733 20.2356 7.31733 19.7186 6.1C19.2016 4.88267 18.4978 3.82433 17.6074 2.925C16.7169 2.02567 15.6714 1.313 14.4707 0.787001C13.2701 0.261002 11.9858 -0.00133324 10.6178 0Z" fill="%232F2F2F"/></svg>') no-repeat right white;
+    background-origin: content-box;
+    padding: 0 0.69rem 0 1.11rem;
+    font-size: 1.5rem;
+    color: #6D6D6D;
+    font-weight: 300;
 }
-.searchbar button{
-    width: 2.18vw;
-    height: 4.42vh;
-    border-radius:0.625rem;
-    background-color: var(--pokecolor-red);
-    border: none;
-    margin-left: .58vw;
-    cursor: pointer;
-}
-.filter{
+.searchbar > .tips{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="734" height="41" viewBox="0 0 734 41" fill="none" ><path d="M0 0H734L710 41H24L0 0Z" fill="%232F2F2F" /></svg>');
-    width: 39.06vw;
+    width: 5.52vw;
     height: 4.42vh;
-}
-.filter a{
-    text-decoration: none;
-    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.375rem;
     color: white;
     font-weight: 300;
-    font-size: 1.375rem;
-    margin-right: .32rem;
-    padding-bottom: 1.61vh;
-}
-.filter svg{
-    cursor: pointer;
-    padding-bottom: 1.61vh;
-
 }

@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, Input} from '@angular/core';
 
+
 @Component({
   selector: 'pokecard',
   standalone: true,
@@ -8,12 +9,29 @@ import { Component, Input} from '@angular/core';
   templateUrl: './pokecard.component.html',
   styleUrl: './pokecard.component.css'
 })
+
+
 export class PokecardComponent {
   @Input()
-  public isEmpty;
- 
+  public isEmpty = true;
+  @Input()
+  pokeinfo!: any;
+  protected pokeModel: any
+
+  
   constructor(){
-   this.isEmpty = false;
   }
- 
+
+  ngOnInit(){
+    console.log(this.pokeinfo)
+    if(this.pokeinfo != undefined || null){
+      this.isEmpty = false
+    }
+    this.pokeModel = {
+      id: `N°${"0".repeat(4 - this.pokeinfo.id.toString().length)}${this.pokeinfo.id}`,
+      name: this.pokeinfo.name,
+      types: this.pokeinfo.types,
+      img: ""
+    }
+  }
 }

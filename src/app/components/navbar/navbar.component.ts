@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarStateService } from '../../services/navbar-state.service';
+import { PokeapiService } from '../../services/pokeapi.service';
 
 @Component({
   selector: 'navbar',
@@ -9,16 +10,11 @@ import { NavbarStateService } from '../../services/navbar-state.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent implements OnChanges{
+export class NavbarComponent{
 
-  @Input()
-  public isGameSeach: boolean = this.state.getState();
 
-  constructor(private state: NavbarStateService){
+  constructor(protected state: NavbarStateService){
     
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-      console.log(changes)
   }
 
   ngOnInit(){

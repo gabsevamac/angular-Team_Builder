@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {CookieService} from 'ngx-cookie-service'
+import { PokeapiService } from '../../services/pokeapi.service';
 @Component({
   selector: 'app-area-teste',
   standalone: true,
@@ -7,8 +8,11 @@ import {CookieService} from 'ngx-cookie-service'
   templateUrl: './area-teste.component.html',
   styleUrl: './area-teste.component.css'
 })
-export class AreaTesteComponent {
-  constructor(private cookie: CookieService){}
+export class AreaTesteComponent{
+  constructor(private cookie: CookieService, private pokeApi: PokeapiService){}
+
+  ngOnInit(){
+  }
 
   
 }

@@ -1,26 +1,5 @@
 <div class="pokedex__container">
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
-    <pokecard/>
+    @for (pokemon of pokemonList; track $index) {
+        <pokecard [pokeinfo]="pokemon"></pokecard>
+    }
 </div>

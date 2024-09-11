@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AreaTesteComponent } from '../../components/area-teste/area-teste.component';
 import { PokecardComponent } from '../../components/pokecard/pokecard.component';
 import { InfopopupComponent } from '../../components/infopopup/infopopup.component';
-import { NavbarStateService } from '../../services/navbar-state.service';
 import { PokedexComponent } from "../pokedex/pokedex.component";
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
@@ -16,11 +15,20 @@ import { RouterOutlet } from '@angular/router';
 })
 export class HomeComponent {
 
-  constructor(private navBarState: NavbarStateService){
-    
-  }
-  
+
   ngOnInit(){
-    this.navBarState.changeState()
+    window.addEventListener('scroll', async function(event){
+      const domElement = this.document.querySelector("navbar")
+      const visible = new Promise(resolve => {
+        const o = new IntersectionObserver(([entry]) => {
+          resolve(entry.intersectionRatio === 1);
+          o.disconnect();
+        })
+        o.observe(<Element>domElement)
+      })
+      if(await visible == false){
+        domElement?.setAttribute("class", "fixed")
+      }
+    })
   }
 }
