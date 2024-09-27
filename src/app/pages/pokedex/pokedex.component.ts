@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { PokecardComponent } from '../../components/pokecard/pokecard.component';
 import { NavbarStateService } from '../../services/navbar-state.service';
 import { PokeapiService } from '../../services/pokeapi.service';
-import { ApiThreatmentService } from '../../services/api-threatment.service';
+import { EndOfListError } from '../../Exceptions/Exceptions';
 
 @Component({
   selector: 'pokedex',
@@ -13,24 +13,60 @@ import { ApiThreatmentService } from '../../services/api-threatment.service';
 })
 export class PokedexComponent {
 
-  protected pokemonList: Array<any> = []
+  protected pokemonList:Array<any> = [];
+  private offset = 0;
   constructor(
     private navBarState: NavbarStateService,
-    private apiThreatment: ApiThreatmentService){
-    
+    private api: PokeapiService){
+
   }
   
   ngOnInit(){
     this.navBarState.setState(false)
-    this.getPokemons()
+    this.loadInfo()
+    window.addEventListener('scroll', this.onWindowScroll)
+    
+  }
+  ngOnDestroy(){
+    window.removeEventListener('scroll', this.onWindowScroll);
   }
 
-  private async getPokemons(){
-   this.apiThreatment.getAllWithDetails(100, 217)
+  private onWindowScroll = () =>{ //TODO: LOADING
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0; // quantidade de pixels que a janela foi rolada para baixo
+    const windowHeight = window.innerHeight;//altura da janela visível (viewport)
+    const documentHeight = document.documentElement.scrollHeight //altura total do documento que inclui o conteúdo que pode não estar visível na janela
+
+
+    if(scrollTop + windowHeight >= documentHeight){ 
+      this.loadInfo();
+    }
   }
-  private async teste(){
-    fetch("https://pokeapi.co/api/v2/pokemon/218")
-      .then(response => response.json())
-      .then(data => console.log(data))
+
+  private loadInfo(){
+    try{
+      this.api.getAllPokemons(this.offset).subscribe(
+        {
+          next: r =>{
+            if(this.pokemonList.length == 0){this.pokemonList = r}
+            else{
+              r.forEach((info: any) => {
+                this.pokemonList.push(info)
+              });
+            }
+            
+          },
+          complete: ()=> {
+            console.info("Requisição completa")
+            this.offset += 36;
+          }
+        }
+      )
+    }catch(err){
+      
+    }
+    
+    
   }
+
+  
 }

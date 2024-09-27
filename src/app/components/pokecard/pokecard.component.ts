@@ -23,7 +23,6 @@ export class PokecardComponent {
   }
 
   ngOnInit(){
-    console.log(this.pokeinfo)
     if(this.pokeinfo != undefined || null){
       this.isEmpty = false
     }
@@ -31,7 +30,7 @@ export class PokecardComponent {
       id: `N°${"0".repeat(4 - this.pokeinfo.id.toString().length)}${this.pokeinfo.id}`,
       name: this.pokeinfo.name,
       types: this.pokeinfo.types,
-      img: ""
+      img: this.pokeinfo.sprites.other['official-artwork']['front_default']
     }
   }
 }

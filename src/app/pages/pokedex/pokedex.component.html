@@ -1,5 +1,5 @@
 <div class="pokedex__container">
     @for (pokemon of pokemonList; track $index) {
-        <pokecard [pokeinfo]="pokemon"></pokecard>
+        <pokecard [pokeinfo]="pokemon.info"></pokecard>
     }
 </div>
