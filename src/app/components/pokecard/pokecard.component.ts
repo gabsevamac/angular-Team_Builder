@@ -1,11 +1,13 @@
-import { NgClass } from '@angular/common';
-import { Component, Input} from '@angular/core';
-
+import { NgClass, NgOptimizedImage} from '@angular/common';
+import { Component, Input, ViewChild} from '@angular/core';
+import { InfopopupComponent } from '../infopopup/infopopup.component';
+import { Overlay, OverlayConfig, OverlayOutsideClickDispatcher } from '@angular/cdk/overlay';
+import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 
 @Component({
   selector: 'pokecard',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass,NgOptimizedImage,InfopopupComponent, PortalModule],
   templateUrl: './pokecard.component.html',
   styleUrl: './pokecard.component.css'
 })
@@ -17,9 +19,10 @@ export class PokecardComponent {
   @Input()
   pokeinfo!: any;
   protected pokeModel: any
-
+  protected isLoaded: boolean = false
+  @ViewChild(CdkPortal) portal !: CdkPortal
   
-  constructor(){
+  constructor(private overlay: Overlay){
   }
 
   ngOnInit(){
@@ -32,5 +35,15 @@ export class PokecardComponent {
       types: this.pokeinfo.types,
       img: this.pokeinfo.sprites.other['official-artwork']['front_default']
     }
+  }
+
+  openModal(){
+    const config = new OverlayConfig({
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+      hasBackdrop: true
+    });
+    const overlayRef =this.overlay.create(config);
+    overlayRef.backdropClick().subscribe(() => overlayRef.detach());
+    overlayRef.attach(this.portal)
   }
 }

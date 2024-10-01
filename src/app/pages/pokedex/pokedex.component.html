@@ -2,4 +2,9 @@
     @for (pokemon of pokemonList; track $index) {
         <pokecard [pokeinfo]="pokemon.info"></pokecard>
     }
+    <div class="loader__container">
+        @if(loader.visibility){
+            <mat-spinner [diameter]="50"></mat-spinner>
+        }
+    </div>
 </div>

@@ -4,3 +4,9 @@
     grid-template-columns: 15.5vw 15.5vw 15.5vw 15.5vw 15.5vw 15.5vw;
     gap: 30px 0px;
 }
+.loader__container{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Kumbh+Sans:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/cdk/overlay-prebuilt.css';
 :root{
   --navbar-font: "Jockey One", sans-serif;
   --pokecolor-red: #D30000;
